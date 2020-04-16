@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Building a javascript frontend and rails backend"
-date:       2020-04-16 02:51:10 +0000
+date:       2020-04-15 22:51:11 -0400
 permalink:  building_a_javascript_frontend_and_rails_backend
 ---
 
@@ -10,15 +10,7 @@ Alright doing something new again this time for my blog.
 
 I have met my requirements for my single page application and the app is looking pretty good and performs mostly how I want. There are a few things that I would like to improve upon. Mostly related to presentation or UX. Instead I want to focus my energy elsewhere.
 
-I am actually going to make a whole new project. That is more basic. I am thinking of doing Cats and Kittens or something like that. So that I can get more practice with javascript and building using object orientation and separation of concerns. And building in layers instead of all models at the same time, all migrations at the same time, and all of that. And focus my attention on the concepts of this section and not so much on styling. Also I will cover the topics for this project including:
-
-
-context
-this
-closures
-ES6 syntax
-let, const
-arrow functions
+I am actually going to make a whole new project. That is more basic. I am thinking of doing Cats and Kittens or something like that. So that I can get more practice with javascript and building using object orientation and separation of concerns. And building in layers instead of all models at the same time, all migrations at the same time, and all of that. And focus my attention on the concepts of this section and not so much on styling. 
 
 Explain how Rails routes a request to a controller and method based on the URL and HTTP verb
 Use render json: to render serialized JSON
@@ -74,7 +66,7 @@ We are going to build vertically for this and use OOJS to start once on the fron
 And check out our routes: looks good there since we've got our resources.
 
 Add this to our Category class
-validates :name, presence: true
+>validates :name, presence: true
 
 Check on controllers next. Don't need to worry about views as of now. Controllers are fine for now. I will need to change and add more to the Task controller actions and includes so that a task's category will show up too.
 
@@ -88,13 +80,13 @@ And then we will be able to start on the frontend. Let's make a new directory ca
 mkdir client
 
 Then start populating that directory with an index.html and javascript files.
-touch client/index.html
+>touch client/index.html
 mkdir client/src
 touch client/src/index.js
 touch client/src/taskList.js
 touch client/index.css
 touch client/src/task.js
-touch client/src/api.js
+>touch client/src/api.js
 
 In the html file, we add html:5 to build out the document. And add script src to this as well, so that we can utilize our javascript files. Yay!
 
