@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "More on javascript frontend "
-date:       2020-04-16 02:52:42 +0000
+date:       2020-04-15 22:52:43 -0400
 permalink:  more_on_javascript_frontend
 ---
 
@@ -29,3 +29,7 @@ Bind locks the this in place so that the function's arguments does not change. A
 Here are my takeaways from frontend programming in javascript. You've got to do a lot twice if you use one source of truth on the backend. What I mean by this is related to updating and refreshing the page. Let's say you make a change to the DOM and then also makes a change to the backend as in something is updated. In my app this is if a Task is completed or not. The default value for all tasks is false, and once you click the completed button then the value changes in the database on the DOM. BUT if you don't tell your frontend to render this properly, then there will not be a change, so you'll have to build the new way of rendering again.
 
 Currently I am having an issue with this exactly. And it's giving me some trouble. So here's the situation. When I log in as a user, the user's task show up all nice like they should. However, when I refresh the page, my frontend for some reason thinks that it does not know who the user is at the very beginning and for that reason cannot load the user's tasks which makes sense. I think this is related somehow to the way I am calling some of the fetches but I am not sure. 
+
+Update: Resolution! Yay! I needed to return if I want to call a .then or .finally after my api call (so fetch). Then the user will be defined and we are able to get the user's tasks then! 
+
+
