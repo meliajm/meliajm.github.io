@@ -37,16 +37,9 @@ To config/database.yml add:
 
 Once we've got our frontend deployed as well, we will need to change config/initializers/cors.rb to:
 
-```Rails.application.config.middleware.insert_before 0, Rack::Cors do
-  allow do
-    origins 'nameofsite.com'
+```origins 'nameofsite.com'```
 
-    resource '*',
-      headers: :any,
-      methods: [:get, :post, :put, :patch, :delete, :options, :head],
-      credentials: true
-  end
-end```
+   
 
 Make sure your repo is updated on github. And it is a good idea to make sure you are able to run your server locally before deploying so that everything is what you expect it to be.
 
