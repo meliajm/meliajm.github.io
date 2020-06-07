@@ -11,9 +11,9 @@ The purpose of this blog is to explain how to take your local Rails backend and 
 First thing is to update the Gemfile. Heroku does not allow `sqlite3`, instead we've got to use `postgres`.
 
 The Gemfile should contain this:
-`group :production do 
+```group :production do 
   gem 'pg', '~> 0.18.4'
-end`
+end```
 
 and something like this:
 `group :development, :test do
