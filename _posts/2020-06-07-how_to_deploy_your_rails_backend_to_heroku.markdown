@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "How to deploy your Rails backend to Heroku"
-date:       2020-06-07 17:58:39 +0000
+date:       2020-06-07 13:58:40 -0400
 permalink:  how_to_deploy_your_rails_backend_to_heroku
 ---
 
@@ -13,15 +13,13 @@ First thing is to update the Gemfile. Heroku does not allow `sqlite3`, instead w
 The Gemfile should contain this:
 `group :production do 
   gem 'pg', '~> 0.18.4'
-
 end`
 
 and something like this:
 `group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'sqlite3', '~> 1.4'
-end
-`
+end`
 
 Now let's `bundle install`.
 
@@ -34,13 +32,12 @@ To config/database.yml add:
   database: backend-example-production
   username: backend-example
   password: <%= ENV['BACKEND-EXAMPLE_DATABASE_PASSWORD'] %>
-  # username: example-api-ge-heroku-example   password: <%= ENV['EXAMPLE-API-GE-HEROKU-EXAMPLE_DATABASE_PASSWORD'] %>
+  # username: example-api-ge-heroku-example&#x2028;  password: <%= ENV['EXAMPLE-API-GE-HEROKU-EXAMPLE_DATABASE_PASSWORD'] %>
 `
 
 Once we've got our frontend deployed as well, we will need to change config/initializers/cors.rb to:
 
-`
-Rails.application.config.middleware.insert_before 0, Rack::Cors do
+`Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
     origins 'nameofsite.com'
 
@@ -49,8 +46,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
       methods: [:get, :post, :put, :patch, :delete, :options, :head],
       credentials: true
   end
-end
-`
+end`
 
 Make sure your repo is updated on github. And it is a good idea to make sure you are able to run your server locally before deploying so that everything is what you expect it to be.
 
