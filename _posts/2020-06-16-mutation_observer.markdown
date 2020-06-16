@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Mutation observer"
-date:       2020-06-16 18:33:05 +0000
+date:       2020-06-16 14:33:07 -0400
 permalink:  mutation_observer
 ---
 
@@ -31,7 +31,7 @@ We need a config to set us up so we know which mutations to observe.
 Now we are ready to call the observer on a target node:
 ```exampleObserver.observe(targetNode, config) ```
 
-I think of this as an event listener, except the event is not caused by the user on her interface necessarily.
+I think of this as an event listener, except the event is not caused by the user on her interface necessarily. And also is good alternative to setInterval or setTimeout.
 
 Oh! And to stop observing:
 ```observer.disconnect();```
