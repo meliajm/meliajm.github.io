@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Using setInterval with recursion"
-date:       2020-06-23 18:07:04 +0000
+date:       2020-06-23 14:07:05 -0400
 permalink:  using_setinterval_with_recursion
 ---
 
@@ -19,20 +19,24 @@ function runExampleIntervalWithRecursion() {
 		      let exampleCondition
 		      if (!!exampleCondition) {
 		           // do some work here
-							 // we can think of this function below turning something on
+							 // we can think of this function below turning 
+							 // something on
 					     exampleDoWorkFunction()
 		           clearInterval(intervalExample)
 		 }
 		 // now is where some other things may happen
 		 // we need to check if different conditions are met
-		 // so that we can reset and see if the function we turned on above has now been turn off
+		 // so that we can reset and see if the function we 
+		 //turned on above has now been turn off
 		 let secondExampleInterval = setInterval(()=> {
 		      // more variables maybe
 					// more conditionals
 					if (!!otherExampleCondition) {
 					    // here is the recursion
-							// now we are back to our original state where the function is turned off
-							// and we are able to start from the beginning and keep running this function continuously
+							// now we are back to our original state where the 
+							// function is turned off
+							// and we are able to start from the beginning and 
+							// keep running this function continuously
 					    runExampleIntervalWithRecursion()
 							clearInterval(secondExampleInterval)
 
